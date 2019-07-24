@@ -1,18 +1,28 @@
+{% extends 'base.html'%}
+{% import 'macros.html' as macro%}
 <h1> <h1> hello{{ message }} </h1> </h1>
-<body>
+<body><!-- Content block -->
+    {% block content %}
+    
     <!-- Popular movie section  -->
     <h3> Popular Movies</h3>
      <ul>
-        {% for popular_movie in popular %}
-            <li>{{ popular_movie.title}}</li>
-        {% endfor %}
+        {{ macro.displayMovieList(popular)}}
+    </ul><!-- Upcoming movie  -->
+    <h3> Upcoming Movies </h3>
+    <ul>
+        {{ macro.displayMovieList(upcoming)}}
     </ul>
-</ul>
 <!-- Now showing movie -->
 <h3>Now Showing</h3>
  <ul>
-    {% for now_showing_movie in now_showing %}
-        <li>{{ now_showing_movie.title}}</li>
-    {% endfor %}
+    {{ macro.displayMovieList(now_playing)}}
 </ul>
+{% endblock%}
 </body>
+<!-- {% for popular_movie in popular %}
+            <li>{{ popular_movie.title}}</li>
+        {% endfor %} -->
+ <!-- {% for now_showing_movie in now_showing %}
+        <li>{{ now_showing_movie.title}}</li>
+    {% endfor %} -->
