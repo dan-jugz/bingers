@@ -7,4 +7,12 @@
             <li>{{ popular_movie.title}}</li>
         {% endfor %}
     </ul>
+</ul>
+<!-- Now showing movie -->
+<h3>Now Showing</h3>
+ <ul>
+    {% for now_showing_movie in now_showing %}
+        <li>{{ now_showing_movie.title}}</li>
+    {% endfor %}
+</ul>
 </body>
